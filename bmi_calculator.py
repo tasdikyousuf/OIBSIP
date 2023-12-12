@@ -1,3 +1,4 @@
+# function with necessary conditions and statements 
 def bmi_calculator(weight, height):
 
     bmi = weight / (height ** 2)
@@ -17,7 +18,8 @@ def bmi_calculator(weight, height):
     else:
         print("enter valid details")
 
+#user input
 user_weight = float(input("Enter body mass in kilograms: "))
 user_height = float(input("Enter height in meters: "))
 
-bmi_calculator(user_weight, user_height)
+bmi_calculator(user_weight, user_height) #utilization of function
