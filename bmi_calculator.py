@@ -1,25 +1,27 @@
-# function with necessary conditions and statements 
-def bmi_calculator(weight, height):
-
+def calculate_bmi(weight, height):
     bmi = weight / (height ** 2)
-    print(round(bmi,2))
+    return bmi
 
-    if (bmi > 0):
-        if (bmi <= 18.5):
-            print("Underweight")
-        elif (bmi <= 25):
-            print("Normal")
-        elif (bmi <= 30):
-            print("Overweight")
-        elif (bmi <= 35):
-            print("Obese")
-        else:
-            print("Morbidly Obese")
+def get_bmi_category(bmi):
+    if bmi <= 18.5:
+        return "Underweight"
+    elif bmi <= 25:
+        return "Normal"
+    elif bmi <= 30:
+        return "Overweight"
+    elif bmi <= 35:
+        return "Obese"
     else:
-        print("enter valid details")
+        return "Morbidly Obese"
 
-#user input
-user_weight = float(input("Enter body mass in kilograms: "))
-user_height = float(input("Enter height in meters: "))
+def bmi_calculator():
+    weight = float(input("Enter body mass in kilograms: "))
+    height = float(input("Enter height in meters: "))
 
-bmi_calculator(user_weight, user_height) #utilization of function
+    bmi = calculate_bmi(weight, height)
+    bmi_category = get_bmi_category(bmi)
+
+    print("BMI:", round(bmi, 2))
+    print("Category:", bmi_category)
+
+bmi_calculator()
