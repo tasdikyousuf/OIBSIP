@@ -27,12 +27,12 @@ def password_generator(length, digit, special):
     elif special == "y" and digit != "y":
         pass_characters = pass_letters + pass_special
     else:
-        print("Warning: You must select letters and at least one more criterion to generate a password.")
+        print("Error: You must select letters and at least one more criterion to generate a password.")
         return
 
     for i in range(length):
         password += secrets.choice(pass_characters)
-
+    print("Your password is: ")
     print(password)
 
 pass_length = int(input("Enter the total password length you want: "))
